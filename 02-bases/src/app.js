@@ -4,12 +4,18 @@
 // const { getUserById } = require('./js-foundation/04-arrow');
 // const { buildMakePerson } = require('./js-foundation/05-factory');
 // const { getAge, getId } = require('./plugins');
-const { getPokemonById } = require('./js-foundation/06-promises');
+// const { getPokemonById } = require('./js-foundation/06-promises');
+const { buildLogger } = require('./plugins');
 
-getPokemonById(1)
-	.then((pokemon) => console.log(pokemon))
-	.catch((error) => console.log(error))
-	.finally(() => console.log('done'));
+const logger = buildLogger('app.js');
+
+logger.log('Hello world!');
+logger.error('This is an error');
+
+// getPokemonById(1)
+// 	.then((pokemon) => console.log(pokemon))
+// 	.catch((error) => console.log(error))
+// 	.finally(() => console.log('done'));
 
 //! Factory function reference
 // const makePerson = buildMakePerson({ getAge, getId });
