@@ -6,13 +6,13 @@ export const users: User[] = [
 ];
 
 export interface Callback {
-	(err?: Error | null, user?: User): void;
+	(err?: string, user?: User): void;
 }
 
 export const getUserById = (id: number, callback: Callback): void => {
 	const user = users.find((user) => user.id === id);
 
-	if (!user) return callback(new Error(`User with id ${id} not found`));
+	if (!user) return callback(`User with id ${id} not found`);
 
-	return callback(null, user);
+	return callback(undefined, user);
 };
