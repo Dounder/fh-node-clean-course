@@ -1,0 +1,3 @@
+[submodule "05-noc"]
+	path = 05-noc
+	url = git@github.com:Dounder/fh-node-noc.git
